@@ -1,6 +1,6 @@
 import express from 'express'
 import path from 'path'
-
+import router from '../src/router'
 
 //** 1-entrance **//
 const app = express();
@@ -18,5 +18,6 @@ app.set("view engine", "ejs");
 //** 3-views **//
 
 //** 4-routers **//
+app.use('/', router)
 
 export default app;
