@@ -2,6 +2,8 @@ import express from 'express'
 import path from 'path'
 import router from '../src/router'
 
+import routerAdmin from './routerAdmin';
+
 //** 1-entrance **//
 const app = express();
 console.log("__dirname:",__dirname);
@@ -18,6 +20,6 @@ app.set("view engine", "ejs");
 //** 3-views **//
 
 //** 4-routers **//
-app.use('/', router)
+app.use('/admin', routerAdmin)
 
 export default app;
