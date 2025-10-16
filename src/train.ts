@@ -1,31 +1,33 @@
-// task H2
-
-import { isNumberObject } from "util/types";
-
-function getDigits(str: string) {
-  const text = str.split("");
-  const num: number[] = [];
-  for (let i = 0; i < text.length; i++) {
-    if (!isNaN(Number(text[i]))) {
-      num.push(Number(text[i]));
-    }
-  }
-
-  console.log("raqamlar:", num.join(""));
-}
-
-getDigits("11m");
+/** project standarts:
+ -logging standart
+-naming standart
+    function, method, variable =>camel goHome
+    class => pascal 
+    folder => kebab
+    css => snake
+  -Error handling
+**/
 
 
 
 
+// // task H2
 
+// import { isNumberObject } from "util/types";
 
+// function getDigits(str: string) {
+//   const text = str.split("");
+//   const num: number[] = [];
+//   for (let i = 0; i < text.length; i++) {
+//     if (!isNaN(Number(text[i]))) {
+//       num.push(Number(text[i]));
+//     }
+//   }
 
+//   console.log("raqamlar:", num.join(""));
+// }
 
-
-
-
+// getDigits("11m");
 
 
 //task H 1-usul

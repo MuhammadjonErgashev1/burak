@@ -6,7 +6,9 @@ const restauranController: T = {};
 restauranController.goHome = (eq: Request, res: Response)=>{
     try
     {
-        res.send("home page")
+        //logic, service model
+        console.log("goHome");
+        res.send("home page");
     }
     catch(err){
         console.log("Error, goHome", err);
@@ -15,7 +17,8 @@ restauranController.goHome = (eq: Request, res: Response)=>{
 restauranController.getLogin = (eq: Request, res: Response)=>{
     try
     {
-        res.send("login page")
+        console.log('getLogin');
+        res.send("login page");
     }
     catch(err){
         console.log("Error, goHome", err);
