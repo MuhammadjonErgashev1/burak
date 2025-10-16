@@ -16,7 +16,7 @@ export enum HttpCode{
         UPDATE_FAILED ="Update is failed"
     }
 
-    class Erors extends Error {
+    class Errors extends Error {
         public code: HttpCode;
         public message: Message;
 
@@ -27,4 +27,4 @@ export enum HttpCode{
         }
     }
 
-    export default Erors;
+    export default Errors;
