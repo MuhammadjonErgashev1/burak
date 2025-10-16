@@ -9,6 +9,7 @@ restauranController.goHome = (eq: Request, res: Response)=>{
         //logic, service model
         console.log("goHome");
         res.send("home page");
+        // send, json, redirect, end, render
     }
     catch(err){
         console.log("Error, goHome", err);
@@ -28,6 +29,29 @@ restauranController.getSignup = (eq: Request, res: Response)=>{
     try
     {
         res.send("Signup page")
+    }
+    catch(err){
+        console.log("Error, goHome", err);
+    }
+};
+
+restauranController.processLogin = (eq: Request, res: Response)=>{
+    try
+    {
+        console.log('processLogin')
+        res.send("done")
+        
+    }
+    catch(err){
+        console.log("Error, goHome", err);
+    }
+};
+restauranController.processSignup = (eq: Request, res: Response)=>{
+    try
+    {
+        console.log('processSignup ')
+        res.send("done")
+        
     }
     catch(err){
         console.log("Error, goHome", err);
