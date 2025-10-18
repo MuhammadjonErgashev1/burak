@@ -1,11 +1,11 @@
 import  {Request , Response } from 'express';
 import {T} from "../libs/types/common"
 import MemberService from '../models/member.service';
-import { MemberInput } from '../libs/types/member';
+import { LoginInput, MemberInput } from '../libs/types/member';
 import { MemberType } from '../libs/enums/member.enum';
 
 const restauranController: T = {};
-restauranController.goHome = (eq: Request, res: Response)=>{
+restauranController.goHome = (req: Request, res: Response)=>{
     try
     {
         //logic, service model
@@ -17,7 +17,7 @@ restauranController.goHome = (eq: Request, res: Response)=>{
         console.log("Error, goHome", err);
     }
 };
-restauranController.getLogin = (eq: Request, res: Response)=>{
+restauranController.getLogin = (req: Request, res: Response)=>{
     try
     {
         console.log('getLogin');
@@ -27,7 +27,7 @@ restauranController.getLogin = (eq: Request, res: Response)=>{
         console.log("Error, goHome", err);
     }
 };
-restauranController.getSignup = (eq: Request, res: Response)=>{
+restauranController.getSignup = (req: Request, res: Response)=>{
     try
     {
         res.send("Signup page")
@@ -36,16 +36,22 @@ restauranController.getSignup = (eq: Request, res: Response)=>{
         console.log("Error, goHome", err);
     }
 };
-
-restauranController.processLogin = (eq: Request, res: Response)=>{
+console.log("processLogin ishladi");
+restauranController.processLogin = async(req: Request, res: Response)=>{
     try
     {
-        console.log('processLogin')
-        res.send("done")
+        console.log('processLogin');
+        console.log("body:", req.body);
+        const input: LoginInput=req.body;
+
+        const memberService = new MemberService();
+        const result = await memberService.processLogin(input);
+        res.send(result)
         
     }
     catch(err){
         console.log("Error, goHome", err);
+        res.send(err);
     }
 };
 restauranController.processSignup = async (req: Request, res: Response)=>{
