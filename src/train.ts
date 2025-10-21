@@ -36,6 +36,11 @@ console.log(majorityElement(son));
   -Error handling
 **/
 
+/* 
+Traditional frontend development  => BSSR(Admin) yoki SSR =>ejs;
+Modern frontend development       => SPA(User) =>REACT;
+*/
+
 
 
 

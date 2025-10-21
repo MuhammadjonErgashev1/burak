@@ -24,6 +24,7 @@ app.set("view engine", "ejs");
 
 
 //** 4-routers **//
-app.use('/admin', routerAdmin)
+app.use('/admin', routerAdmin) // SSR
+app.use("/", router); // REACT =>SPA
 
 export default app;

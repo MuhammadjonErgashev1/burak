@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "this is burak project",
   "main": "src/server.ts",
+    "author": "MIT",
+  "license": "ISC",
   "scripts": {
     "start:dev": "nodemon --exec  ts-node src/server.ts",
     "build": "tsc",
     "train": "nodemon --exec  ts-node src/train.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "MIT",
-  "license": "ISC",
+
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.0",
