@@ -1,7 +1,7 @@
 import  {Request , Response } from 'express';
 import {T} from "../libs/types/common"
 import MemberService from '../models/member.service';
-import { LoginInput, MemberInput } from '../libs/types/member';
+import { AdminRequest, LoginInput, MemberInput } from '../libs/types/member';
 import { MemberType } from '../libs/enums/member.enum';
 
 const restauranController: T = {}; // define
@@ -36,27 +36,8 @@ restauranController.getSignup = (req: Request, res: Response)=>{
         console.log("Error, goHome", err);
     }
 };
-console.log("processLogin ishladi");
-restauranController.processLogin = async(req: Request, res: Response)=>{
-    try
-    {
-        console.log('processLogin');
-        console.log("body:", req.body);
-        const input: LoginInput=req.body;
 
-        const ms = new MemberService();
-        const result = await ms.processLogin(input);
-        //TODO sessions authentications
-        res.send(result)
-        
-    }
-    catch(err){
-        console.log("Error, goHome", err);
-        res.send(err);
-    }
-};
-//call
-restauranController.processSignup = async (req: Request, res: Response)=>{
+restauranController.processSignup = async (req: AdminRequest, res: Response)=>{
     try
     {
         console.log('processSignup ')
@@ -66,9 +47,16 @@ restauranController.processSignup = async (req: Request, res: Response)=>{
         input.memberType = MemberType.RESTAURANT;
 
         const memberService = new MemberService()
-        const rsult= await memberService.processSignup(input);
+        const result= await memberService.processSignup(input);
         //TODO sessions authentications
-        res.send("done")
+
+        req.session.member = result;
+        req.session.save(function(){
+            res.send(result);
+        })
+
+
+        
         
     }
     catch(err){
@@ -76,5 +64,33 @@ restauranController.processSignup = async (req: Request, res: Response)=>{
         res.send(err);
     }
 };
+
+console.log("processLogin ishladi");
+restauranController.processLogin = async(req: AdminRequest, res: Response)=>{
+    try
+    {
+        console.log('processLogin');
+        console.log("body:", req.body);
+        const input: LoginInput=req.body;
+
+        const ms = new MemberService();
+        const result = await ms.processLogin(input);
+        //TODO sessions authentications
+        req.session.member = result;
+        req.session.save(function(){
+            res.send(result);
+        })
+        
+        
+    }
+    catch(err){
+        console.log("Error, goHome", err);
+        res.send(err);
+    }
+};
+//call
+
+
+
 
 export default restauranController;
