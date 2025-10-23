@@ -1,6 +1,33 @@
+//task K. //A, E, I, O, U 
+// 1-usul
+// function countVowels(str: string) {
+//   const vowels = ['a', 'e', 'i', 'o', 'u'];
+//   let count = 0;
 
+//   for (let char of str.toLowerCase()) {
+//     if (vowels.includes(char)) {
+//       count++;
+//     }
+//   }
 
+//   return count;
+// }
 
+// 2-usul
+
+function countVowels(str:string){
+  let count = 0;
+  let vowels=['a','e','i','o','u']; //buyuk
+for(let i=0; i<str.length; i++){
+  if(str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o'|| str[i] === 'u'){
+    count ++;
+    
+  }
+}
+return count;
+}
+const result=countVowels("ensiklopediyaai")
+console.log(result);
 
 
 
