@@ -1,17 +1,35 @@
-//TAsK J
-function findLongestWord(str:string) {
-  let words = str.split(" ");
-  let longest = "";
-  for (let word of words) {
-    if (word.length > longest.length) {
-      longest = word;
-    }
-  }
-  return longest;
-}
 
-const result = findLongestWord("this is uzbekistan")
-console.log(result)
+
+
+
+
+
+
+
+
+
+
+
+
+// //TAsK J
+// function findLongestWord(str:string) {
+//   let words = str.split(" ");
+//   let longest = "";
+//   for (let word of words) {
+//     if (word.length > longest.length) {
+//       longest = word;
+//     }
+//   }
+//   return longest;
+// }
+
+// const result = findLongestWord("this is uzbekistan")
+// console.log(result)
+
+
+
+
+
 // //Task-I
 
 // function majorityElement(nums:number[]){ //1 2 2 3 4 5 4 2

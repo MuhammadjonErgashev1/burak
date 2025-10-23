@@ -3,7 +3,7 @@ import {T} from "../libs/types/common"
 import MemberService from '../models/member.service';
 import { AdminRequest, LoginInput, MemberInput } from '../libs/types/member';
 import { MemberType } from '../libs/enums/member.enum';
-import { Message } from '../libs/errors';
+import Errors, { Message } from '../libs/errors';
 
 const restauranController: T = {}; // define
 restauranController.goHome = (req: Request, res: Response)=>{
@@ -16,6 +16,7 @@ restauranController.goHome = (req: Request, res: Response)=>{
     }
     catch(err){
         console.log("Error, goHome", err);
+        res.redirect("/admin")
     }
 };
 restauranController.getLogin = (req: Request, res: Response)=>{
@@ -26,6 +27,7 @@ restauranController.getLogin = (req: Request, res: Response)=>{
     }
     catch(err){
         console.log("Error, goHome", err);
+        res.redirect("/admin")
     }
 };
 restauranController.getSignup = (req: Request, res: Response)=>{
@@ -35,6 +37,7 @@ restauranController.getSignup = (req: Request, res: Response)=>{
     }
     catch(err){
         console.log("Error, goHome", err);
+        res.redirect("/admin")
     }
 };
 
@@ -62,6 +65,8 @@ restauranController.processSignup = async (req: AdminRequest, res: Response)=>{
     }
     catch(err){
         console.log("Error, goHome", err);
+        const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG
+        res.send(`<script> alert("${message}"); window.location.replace('admin/signup') </script>`);
         res.send(err);
     }
 };
@@ -86,7 +91,24 @@ restauranController.processLogin = async(req: AdminRequest, res: Response)=>{
     }
     catch(err){
         console.log("Error, goHome", err);
+        const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG
+        res.send(`<script> alert("${message}"); window.location.replace('admin/login') </script>`);
         res.send(err);
+    }
+};
+restauranController.logout = async(req: AdminRequest, res: Response)=>{
+    try
+    {
+        console.log('logout');
+       req.session.destroy(function(){
+        res.redirect("/admin")
+       })
+        
+        
+    }
+    catch(err){
+        console.log("Error, logout", err);
+        res.redirect("/admin")
     }
 };
 //call
