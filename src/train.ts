@@ -1,28 +1,42 @@
-//Task-I
-
-function majorityElement(nums:number[]){ //1 2 2 3 4 5 4 2
-  
-  let countMax= 0;
-  let maxSon=0;
-  
-  for(let i=0; i<nums.length; i++){
-    let count = 0;
-
-    for(let j=0; j<nums.length; j++){
-      if(nums[i]===nums[j]){
-        count++;
-      }
+//TAsK J
+function findLongestWord(str:string) {
+  let words = str.split(" ");
+  let longest = "";
+  for (let word of words) {
+    if (word.length > longest.length) {
+      longest = word;
     }
-    if(count>countMax){
-      countMax=count;
-      maxSon=nums[i];
-    }
+  }
+  return longest;
+}
+
+const result = findLongestWord("this is uzbekistan")
+console.log(result)
+// //Task-I
+
+// function majorityElement(nums:number[]){ //1 2 2 3 4 5 4 2
+  
+//   let countMax= 0;
+//   let maxSon=0;
+  
+//   for(let i=0; i<nums.length; i++){
+//     let count = 0;
+
+//     for(let j=0; j<nums.length; j++){
+//       if(nums[i]===nums[j]){
+//         count++;
+//       }
+//     }
+//     if(count>countMax){
+//       countMax=count;
+//       maxSon=nums[i];
+//     }
       
-}
-return maxSon;
-}
-const son:number[]=[1,2,2,3,4,5,4,2,3,3,3,3];
-console.log(majorityElement(son));
+// }
+// return maxSon;
+// }
+// const son:number[]=[1,2,2,3,4,5,4,2,3,3,3,3];
+// console.log(majorityElement(son));
 
 
 

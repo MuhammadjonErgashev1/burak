@@ -44,8 +44,8 @@ restauranController.processLogin = async(req: Request, res: Response)=>{
         console.log("body:", req.body);
         const input: LoginInput=req.body;
 
-        const memberService = new MemberService();
-        const result = await memberService.processLogin(input);
+        const ms = new MemberService();
+        const result = await ms.processLogin(input);
         //TODO sessions authentications
         res.send(result)
         
