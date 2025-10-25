@@ -1,3 +1,18 @@
+function reverseSentence(str:string){
+  let reversed = str.split("").reverse().join("");
+  return reversed.split(" ").reverse().join(" ");
+}
+console.log(reverseSentence("hello world"))
+
+
+
+
+
+
+
+
+
+
 //task K. //A, E, I, O, U 
 // 1-usul
 // function countVowels(str: string) {
@@ -15,19 +30,19 @@
 
 // 2-usul
 
-function countVowels(str:string){
-  let count = 0;
-  let vowels=['a','e','i','o','u']; //buyuk
-for(let i=0; i<str.length; i++){
-  if(str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o'|| str[i] === 'u'){
-    count ++;
+// function countVowels(str:string){
+//   let count = 0;
+//   let vowels=['a','e','i','o','u']; //buyuk
+// for(let i=0; i<str.length; i++){
+//   if(str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o'|| str[i] === 'u'){
+//     count ++;
     
-  }
-}
-return count;
-}
-const result=countVowels("ensiklopediyaai")
-console.log(result);
+//   }
+// }
+// return count;
+// }
+// const result=countVowels("ensiklopediyaai")
+// console.log(result);
 
 
 
