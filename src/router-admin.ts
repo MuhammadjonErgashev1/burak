@@ -1,3 +1,4 @@
+import productController from './controllers/product.controller';
 import restaurantController from './controllers/restaurant.controller';
 
 import express, { Router } from 'express';
@@ -13,9 +14,12 @@ routerAdmin
 routerAdmin
 .get('/signup', restaurantController.getSignup)
 .post('/signup', restaurantController.processSignup)
-/** Product */
-
 routerAdmin.get("/logout", restaurantController.logout);
 routerAdmin.get("/check-me", restaurantController.checkAuthsession);
+
+/** Product */
+routerAdmin.get("/product/all", productController.getAllProducts)
+routerAdmin.post("product/create", productController.createNewProduct )
+routerAdmin.post("product/:id", productController.updateChosenProduct )
 /** User */
 export default routerAdmin ;
