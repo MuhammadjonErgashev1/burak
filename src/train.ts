@@ -4,7 +4,11 @@ function reverseSentence(str:string){
 }
 console.log(reverseSentence("hello world"))
 
-
+/*
+ front validation
+ backend validation
+ database validation
+ */
 
 
 
