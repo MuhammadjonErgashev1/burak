@@ -3,7 +3,7 @@ import {T} from "../libs/types/common"
 import MemberService from '../models/Member.service';
 import { AdminRequest, LoginInput, MemberInput } from '../libs/types/member';
 import { MemberType } from '../libs/enums/member.enum';
-import Errors, { Message } from '../libs/errors';
+import Errors, { HttpCode, Message } from '../libs/errors';
 
 const restauranController: T = {}; // define
 restauranController.goHome = (req: Request, res: Response)=>{
@@ -45,10 +45,16 @@ restauranController.processSignup = async (req: AdminRequest, res: Response)=>{
     try
     {
         console.log('processSignup ')
-        console.log("body:", req.body)
+        
+        const file = req.file;
+        console.log("file",file);
+       if(!file) throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
+        
+        //console.log("body:", req.body)
         
         const input: MemberInput = req.body;
         input.memberType = MemberType.RESTAURANT;
+        input.memberImage = file?.path;
 
         const memberService = new MemberService()
         const result= await memberService.processSignup(input);
@@ -56,7 +62,7 @@ restauranController.processSignup = async (req: AdminRequest, res: Response)=>{
 
         req.session.member = result;
         req.session.save(function(){
-            res.send(result);
+            res.redirect("/admin/product/all");
         })
 
 
@@ -84,7 +90,7 @@ restauranController.processLogin = async(req: AdminRequest, res: Response)=>{
         //TODO sessions authentications
         req.session.member = result;
         req.session.save(function(){
-            res.send(result);
+            res.redirect("/admin/product/all");
         })
         
         
