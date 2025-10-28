@@ -1,8 +1,23 @@
-function reverseSentence(str:string){
-  let reversed = str.split("").reverse().join("");
-  return reversed.split(" ").reverse().join(" ");
-}
-console.log(reverseSentence("hello world"))
+//task M
+function getSquareNumber(nums:number[]){
+  let newArray=[];
+  
+  for(let i=0; i<nums.length; i++){
+   newArray.push([nums[i], nums[i]*nums[i]])
+  }
+  
+    return newArray
+} 
+console.log(getSquareNumber([1,2,3]))
+
+
+
+
+// function reverseSentence(str:string){
+//   let reversed = str.split("").reverse().join("");
+//   return reversed.split(" ").reverse().join(" ");
+// }
+// console.log(reverseSentence("hello world"))
 
 /*
  front validation
