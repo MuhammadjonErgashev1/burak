@@ -4,6 +4,8 @@ import MemberService from '../models/Member.service';
 import { AdminRequest, LoginInput, MemberInput } from '../libs/types/member';
 import { MemberType } from '../libs/enums/member.enum';
 import Errors, { HttpCode, Message } from '../libs/errors';
+import memberController from './member.controller';
+import MemberModel from '../schema/Member.model';
 
 const restauranController: T = {}; // define
 restauranController.goHome = (req: Request, res: Response)=>{
@@ -85,8 +87,8 @@ restauranController.processLogin = async(req: AdminRequest, res: Response)=>{
         console.log("body:", req.body);
         const input: LoginInput=req.body;
 
-        const ms = new MemberService();
-        const result = await ms.processLogin(input);
+        const memberService = new MemberService();
+        const result = await  memberService.processLogin(input);
         //TODO sessions authentications
         req.session.member = result;
         req.session.save(function(){
@@ -117,8 +119,36 @@ restauranController.logout = async(req: AdminRequest, res: Response)=>{
         res.redirect("/admin")
     }
 };
-//call
 
+//users
+restauranController.getUsers = async (req: Request, res: Response)=>{
+    try
+    {
+        console.log('getUsers');
+        const memberService = new MemberService();
+        const result = await memberService.getUsers()
+        console.log("result", result)
+        res.render("users", {users: result});
+        
+    }
+    catch(err){
+        console.log("Error, getUsers", err);
+        //res.redirect("/admin/login")
+    }
+};
+restauranController.updateChoosenUser = (req: Request, res: Response)=>{
+    try
+    {
+        console.log('updateChoosenUser');
+       res.render("login");
+    }
+    catch(err){
+        console.log("Error, updateChoosenUser", err);
+        
+    }
+};
+
+//checkouthsession
 restauranController.checkAuthsession = async(req: AdminRequest, res: Response)=>{
     try
     {
