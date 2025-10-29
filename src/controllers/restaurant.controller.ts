@@ -136,14 +136,21 @@ restauranController.getUsers = async (req: Request, res: Response)=>{
         //res.redirect("/admin/login")
     }
 };
-restauranController.updateChoosenUser = (req: Request, res: Response)=>{
+restauranController.updateChoosenUser = async (req: Request, res: Response)=>{
     try
     {
         console.log('updateChoosenUser');
-       res.render("login");
+        console.log('req.body', req.body);
+        const memberService = new MemberService();
+        const result = await memberService.updateChoosenUser(req.body)
+
+        res.status(HttpCode.OK).json({data:result})
+      
     }
     catch(err){
         console.log("Error, updateChoosenUser", err);
+        if(err instanceof Errors) res.status(err.code).json(err);
+        else res.status(Errors.standard.code).json(Errors.standard);
         
     }
 };

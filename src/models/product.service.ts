@@ -1,6 +1,6 @@
 import { HttpCode, Message} from "../libs/errors";
 import { Product, ProductInput, ProductUpdateInput } from "../libs/types/product";
-import ProductModel from "../schema/product.model"
+import ProductModel from "../schema/Product.model"
 import Errors from "../libs/errors";
 import { shapeIntoMongooseObjectId } from "../libs/config";
 
