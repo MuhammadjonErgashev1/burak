@@ -1,14 +1,35 @@
-//task M
-function getSquareNumber(nums:number[]){
-  let newArray=[];
+//task N
+
+function palindromCheck(str:string){
+     for(let i = 0; i< str.length/2; i++){
+            if(str[i] !== str[str.length-1-i])
+            {
+                return false
+            }
+        }
+        return true;
+    }
+ 
+ console.log(palindromCheck("dad"))
+ console.log(palindromCheck("son"))
+ console.log(palindromCheck("zammaz"))
+
+
+
+
+
+
+// //task M
+// function getSquareNumber(nums:number[]){
+//   let newArray=[];
   
-  for(let i=0; i<nums.length; i++){
-   newArray.push([nums[i], nums[i]*nums[i]])
-  }
+//   for(let i=0; i<nums.length; i++){
+//    newArray.push([nums[i], nums[i]*nums[i]])
+//   }
   
-    return newArray
-} 
-console.log(getSquareNumber([1,2,3]))
+//     return newArray
+// } 
+// console.log(getSquareNumber([1,2,3]))
 
 
 
