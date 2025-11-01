@@ -1,18 +1,38 @@
-//task N
+//task O
 
-function palindromCheck(str:string){
-     for(let i = 0; i< str.length/2; i++){
-            if(str[i] !== str[str.length-1-i])
-            {
-                return false
-            }
+function calculateSumOfNumbers( arr: any[]){
+    let sum = 0;
+    for(let i = 0; i< arr.length; i++){
+        if(typeof arr[i] === "number"){
+            sum += arr[i];
         }
-        return true;
+        
     }
+    return sum;
+}
+
+const result = [1, 5, 10, "bobur", {x: 10}, true, undefined];
+console.log(calculateSumOfNumbers(result));
+
+
+
+
+
+// //task N
+
+// function palindromCheck(str:string){
+//      for(let i = 0; i< str.length/2; i++){
+//             if(str[i] !== str[str.length-1-i])
+//             {
+//                 return false
+//             }
+//         }
+//         return true;
+//     }
  
- console.log(palindromCheck("dad"))
- console.log(palindromCheck("son"))
- console.log(palindromCheck("zammaz"))
+//  console.log(palindromCheck("dad"))
+//  console.log(palindromCheck("son"))
+//  console.log(palindromCheck("zammaz"))
 
 
 
