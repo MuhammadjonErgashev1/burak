@@ -47,7 +47,7 @@ restauranController.processSignup = async (req: AdminRequest, res: Response)=>{
     try
     {
         console.log('processSignup ')
-        
+        console.log(req.body)
         const file = req.file;
         console.log("file",file);
        if(!file) throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
@@ -75,7 +75,7 @@ restauranController.processSignup = async (req: AdminRequest, res: Response)=>{
         console.log("Error, goHome", err);
         const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG
         res.send(`<script> alert("${message}"); window.location.replace('/admin/signup') </script>`);
-        res.send(err);
+        
     }
 };
 
