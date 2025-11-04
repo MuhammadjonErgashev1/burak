@@ -1,18 +1,37 @@
-//task O
+// Task P
 
-function calculateSumOfNumbers( arr: any[]){
-    let sum = 0;
-    for(let i = 0; i< arr.length; i++){
-        if(typeof arr[i] === "number"){
-            sum += arr[i];
-        }
-        
-    }
-    return sum;
+function objectToArray(obj: object): [string, any][] {
+  const result: [string, any][] = [];
+
+  for (const key in obj) {
+    result.push([key, (obj as any)[key]]);
+  }
+
+  return result;
 }
 
-const result = [1, 5, 10, "bobur", {x: 10}, true, undefined];
-console.log(calculateSumOfNumbers(result));
+console.log(objectToArray({ a: 10, b: 20 }));
+// [['a', 10], ['b', 20]]
+
+
+
+
+
+// //task O
+
+// function calculateSumOfNumbers( arr: any[]){
+//     let sum = 0;
+//     for(let i = 0; i< arr.length; i++){
+//         if(typeof arr[i] === "number"){
+//             sum += arr[i];
+//         }
+        
+//     }
+//     return sum;
+// }
+
+// const result = [1, 5, 10, "bobur", {x: 10}, true, undefined];
+// console.log(calculateSumOfNumbers(result));
 
 
 
