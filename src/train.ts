@@ -1,17 +1,32 @@
-// Task P
+//Task Q
 
-function objectToArray(obj: object): [string, any][] {
-  const result: [string, any][] = [];
-
-  for (const key in obj) {
-    result.push([key, (obj as any)[key]]);
-  }
-
-  return result;
+interface User{
+  name: string,
+  brand: string,
 }
 
-console.log(objectToArray({ a: 10, b: 20 }));
-// [['a', 10], ['b', 20]]
+function hasProperty(user: User, key: string){
+  return key in user;
+}
+console.log(hasProperty({ name: "BMW", brand: "M3" }, "brand"));
+console.log(hasProperty({ name: "BMW", brand: "M3" }, "year"));
+
+
+
+// // Task P
+
+// function objectToArray(obj: object): [string, any][] {
+//   const result: [string, any][] = [];
+
+//   for (const key in obj) {
+//     result.push([key, (obj as any)[key]]);
+//   }
+
+//   return result;
+// }
+
+// console.log(objectToArray({ a: 10, b: 20 }));
+// // [['a', 10], ['b', 20]]
 
 
 
