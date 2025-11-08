@@ -1,15 +1,57 @@
-//Task Q
+//Task R
 
-interface User{
-  name: string,
-  brand: string,
+function calculate(str:string) {
+  
+  str = str.replace(/\s+/g, '');
+
+  let currentNumber = ""; 
+  let sum = 0;            
+
+  
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    
+
+    if (char >= '0' && char <= '9') {
+     
+      currentNumber += char;
+    } else if (char === '+') {
+      
+      sum += Number(currentNumber);
+      currentNumber = ""; 
+    }
+  }
+
+  
+  if (currentNumber !== "") {
+    sum += Number(currentNumber);
+  }
+
+  return sum;
 }
 
-function hasProperty(user: User, key: string){
-  return key in user;
-}
-console.log(hasProperty({ name: "BMW", brand: "M3" }, "brand"));
-console.log(hasProperty({ name: "BMW", brand: "M3" }, "year"));
+
+console.log(calculate("1 + 3"));         
+console.log(calculate("1 + 2 + 3 + 4"));  
+console.log(calculate("10 + 20 + 30"));   
+
+
+
+
+
+
+// //Task Q
+
+// interface User{
+//   name: string,
+//   brand: string,
+// }
+
+// function hasProperty(user: User, key: string){
+//   return key in user;
+// }
+// console.log(hasProperty({ name: "BMW", brand: "M3" }, "brand"));
+// console.log(hasProperty({ name: "BMW", brand: "M3" }, "year"));
 
 
 
