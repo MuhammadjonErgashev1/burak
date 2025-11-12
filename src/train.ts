@@ -1,39 +1,54 @@
-//Task R
+//Task S
+function missingNumber(nums:number[]){
+  let sum = 0;
+  const length=nums.length
+  for(let i=0; i<length; i++)
+  {
+    sum+=nums[i];
+  }
+  const result = (length*(length+1)/2)-sum;
+  return result;
+}
+console.log(missingNumber([3, 0, 1])); // 2
+console.log(missingNumber([0, 1]));    // 2
+console.log(missingNumber([9,6,4,2,3,5,7,0,1])); // 8
 
-function calculate(str:string) {
+// //Task R
+
+// function calculate(str:string) {
   
-  str = str.replace(/\s+/g, '');
+//   str = str.replace(/\s+/g, '');
 
-  let currentNumber = ""; 
-  let sum = 0;            
+//   let currentNumber = ""; 
+//   let sum = 0;            
 
   
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
+//   for (let i = 0; i < str.length; i++) {
+//     const char = str[i];
     
 
-    if (char >= '0' && char <= '9') {
+//     if (char >= '0' && char <= '9') {
      
-      currentNumber += char;
-    } else if (char === '+') {
+//       currentNumber += char;
+//     } else if (char === '+') {
       
-      sum += Number(currentNumber);
-      currentNumber = ""; 
-    }
-  }
+//       sum += Number(currentNumber);
+//       currentNumber = ""; 
+//     }
+//   }
 
   
-  if (currentNumber !== "") {
-    sum += Number(currentNumber);
-  }
+//   if (currentNumber !== "") {
+//     sum += Number(currentNumber);
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
 
-console.log(calculate("1 + 3"));         
-console.log(calculate("1 + 2 + 3 + 4"));  
-console.log(calculate("10 + 20 + 30"));   
+// console.log(calculate("1 + 3"));         
+// console.log(calculate("1 + 2 + 3 + 4"));  
+// console.log(calculate("10 + 20 + 30"));   
 
 
 
