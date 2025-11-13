@@ -1,17 +1,51 @@
-//Task S
-function missingNumber(nums:number[]){
-  let sum = 0;
-  const length=nums.length
-  for(let i=0; i<length; i++)
-  {
-    sum+=nums[i];
+//Task T
+
+function mergeSortedArray(num1:number[],num2:number[]){
+  let i=0;
+  let j=0;
+  let merged = [];
+
+  while(i<num1.length && j<num2.length){
+    if(num1[i]<num2[j]){
+      console.log("num1-",num1[i])
+      console.log("num2-",num2[j])
+      merged.push(num1[i])
+      i++;
+    }
+    else{
+      merged.push(num2[j])
+      j++;
+    }
   }
-  const result = (length*(length+1)/2)-sum;
-  return result;
+  while (i < num1.length) {
+    merged.push(num1[i]);
+    i++;
+  }
+
+  while (j < num2.length) {
+    merged.push(num2[j]);
+    j++;
+  }
+
+  return merged;
+
 }
-console.log(missingNumber([3, 0, 1])); // 2
-console.log(missingNumber([0, 1]));    // 2
-console.log(missingNumber([9,6,4,2,3,5,7,0,1])); // 8
+console.log(mergeSortedArray([0,1,5], [2,3,4]))
+
+// //Task S
+// function missingNumber(nums:number[]){
+//   let sum = 0;
+//   const length=nums.length
+//   for(let i=0; i<length; i++)
+//   {
+//     sum+=nums[i];
+//   }
+//   const result = (length*(length+1)/2)-sum;
+//   return result;
+// }
+// console.log(missingNumber([3, 0, 1])); // 2
+// console.log(missingNumber([0, 1]));    // 2
+// console.log(missingNumber([9,6,4,2,3,5,7,0,1])); // 8
 
 // //Task R
 
