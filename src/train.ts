@@ -1,36 +1,55 @@
-//Task T
+//Task U
 
-function mergeSortedArray(num1:number[],num2:number[]){
-  let i=0;
-  let j=0;
-  let merged = [];
-
-  while(i<num1.length && j<num2.length){
-    if(num1[i]<num2[j]){
-      console.log("num1-",num1[i])
-      console.log("num2-",num2[j])
-      merged.push(num1[i])
-      i++;
+function oddNumbers(num:number){
+  let count = 0;
+  
+  while(num>0)
+  {
+    if(num%2===1)
+    {
+      count++;
+       
     }
-    else{
-      merged.push(num2[j])
-      j++;
-    }
-  }
-  while (i < num1.length) {
-    merged.push(num1[i]);
-    i++;
-  }
-
-  while (j < num2.length) {
-    merged.push(num2[j]);
-    j++;
-  }
-
-  return merged;
-
+    num-=2;
 }
-console.log(mergeSortedArray([0,1,5], [2,3,4]))
+  return count-1;
+}
+
+console.log(oddNumbers(9))
+
+// //Task T
+
+// function mergeSortedArray(num1:number[],num2:number[]){
+//   let i=0;
+//   let j=0;
+//   let merged = [];
+
+//   while(i<num1.length && j<num2.length){
+//     if(num1[i]<num2[j]){
+//       console.log("num1-",num1[i])
+//       console.log("num2-",num2[j])
+//       merged.push(num1[i])
+//       i++;
+//     }
+//     else{
+//       merged.push(num2[j])
+//       j++;
+//     }
+//   }
+//   while (i < num1.length) {
+//     merged.push(num1[i]);
+//     i++;
+//   }
+
+//   while (j < num2.length) {
+//     merged.push(num2[j]);
+//     j++;
+//   }
+
+//   return merged;
+
+// }
+// console.log(mergeSortedArray([0,1,5], [2,3,4]))
 
 // //Task S
 // function missingNumber(nums:number[]){
