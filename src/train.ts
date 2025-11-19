@@ -1,21 +1,38 @@
-//Task U
+//Task V
 
-function oddNumbers(num:number){
-  let count = 0;
-  
-  while(num>0)
-  {
-    if(num%2===1)
-    {
-      count++;
-       
+function countChars(str:string) {
+   const result: Record<string, number> = {};
+
+  for (let char of str) {
+    if (result[char]) {
+      result[char]++;         
+    } else {
+      result[char] = 1;      
     }
-    num-=2;
-}
-  return count-1;
+  }
+
+  return result;
 }
 
-console.log(oddNumbers(9))
+console.log(countChars("hello"));
+// //Task U
+
+// function oddNumbers(num:number){
+//   let count = 0;
+  
+//   while(num>0)
+//   {
+//     if(num%2===1)
+//     {
+//       count++;
+       
+//     }
+//     num-=2;
+// }
+//   return count-1;
+// }
+
+// console.log(oddNumbers(9))
 
 // //Task T
 
