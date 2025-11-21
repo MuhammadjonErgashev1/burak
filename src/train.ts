@@ -1,20 +1,48 @@
-//Task V
+// Task W
 
-function countChars(str:string) {
-   const result: Record<string, number> = {};
+function chunkArray(arr: number[], size: number): number[][] {
+  const result: number[][] = [];
+  let temp: number[] = [];
 
-  for (let char of str) {
-    if (result[char]) {
-      result[char]++;         
-    } else {
-      result[char] = 1;      
+  for (let i = 0; i < arr.length; i++) {
+    temp.push(arr[i]);   
+
+    if (temp.length === size) {
+      result.push(temp); 
+      temp = [];       
     }
+  }
+
+  
+  if (temp.length > 0) {
+    result.push(temp);
   }
 
   return result;
 }
 
-console.log(countChars("hello"));
+console.log(chunkArray([1,2,3,5,4,6,7,9,22,1,1], 3))
+  
+
+
+
+// //Task V
+
+// function countChars(str:string) {
+//    const result: Record<string, number> = {};
+
+//   for (let char of str) {
+//     if (result[char]) {
+//       result[char]++;         
+//     } else {
+//       result[char] = 1;      
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(countChars("hello"));
 // //Task U
 
 // function oddNumbers(num:number){
