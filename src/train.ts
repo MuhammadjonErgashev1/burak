@@ -1,27 +1,30 @@
-// Task W
 
-function chunkArray(arr: number[], size: number): number[][] {
-  const result: number[][] = [];
-  let temp: number[] = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    temp.push(arr[i]);   
 
-    if (temp.length === size) {
-      result.push(temp); 
-      temp = [];       
-    }
-  }
+// // Task W
+
+// function chunkArray(arr: number[], size: number): number[][] {
+//   const result: number[][] = [];
+//   let temp: number[] = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     temp.push(arr[i]);   
+
+//     if (temp.length === size) {
+//       result.push(temp); 
+//       temp = [];       
+//     }
+//   }
 
   
-  if (temp.length > 0) {
-    result.push(temp);
-  }
+//   if (temp.length > 0) {
+//     result.push(temp);
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(chunkArray([1,2,3,5,4,6,7,9,22,1,1], 3))
+// console.log(chunkArray([1,2,3,5,4,6,7,9,22,1,1], 3))
   
 
 
