@@ -1,33 +1,39 @@
-function countOccurrences(obj: Record<string, any>, keyName: string): number {
-  let count = 0;
 
-  function recursiveCheck(currentObj: Record<string, any>) {
-    for (const key in currentObj) {
 
-      // bunda kalit nomlari bir xil bo'lsa sanalayapti
-      if (key === keyName) {
-        count++;
-      }
 
-      // agar qiymat array yoki object bo'lsa ichiga kirilayapti
-      const value = currentObj[key];
-      if (typeof value === "object" && value !== null) {
-        recursiveCheck(value);
-      }
-    }
-  }
 
-  recursiveCheck(obj);
-  return count;
-}
-const data = {
-  model: "Bugatti",
-  steer: {
-    model: "HANKOOK",
-    size: 30
-  }
-};
-console.log(countOccurrences(data, "model")); 
+
+// //Task X
+// function countOccurrences(obj: Record<string, any>, keyName: string): number {
+//   let count = 0;
+
+//   function recursiveCheck(currentObj: Record<string, any>) {
+//     for (const key in currentObj) {
+
+//       // bunda kalit nomlari bir xil bo'lsa sanalayapti
+//       if (key === keyName) {
+//         count++;
+//       }
+
+//       // agar qiymat array yoki object bo'lsa ichiga kirilayapti
+//       const value = currentObj[key];
+//       if (typeof value === "object" && value !== null) {
+//         recursiveCheck(value);
+//       }
+//     }
+//   }
+
+//   recursiveCheck(obj);
+//   return count;
+// }
+// const data = {
+//   model: "Bugatti",
+//   steer: {
+//     model: "HANKOOK",
+//     size: 30
+//   }
+// };
+// console.log(countOccurrences(data, "model")); 
 
 
 // // Task W
