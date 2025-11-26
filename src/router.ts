@@ -18,6 +18,9 @@ router.get("/member/restaurant", memberController.getRestaurant)
 /*Product*/ 
 
 router.get("/product/all", productController.getProducts)
+router.get("/product/:id", 
+    memberController.retrieveAuth, 
+    productController.getProduct)
 
 /*Order*/ 
 
