@@ -1,24 +1,41 @@
-//Task Y
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-    const result: number[] = [];
+//Task Z
 
-    // arr1 elemtlarini tekshirish
-    for (let i = 0; i < arr1.length; i++) {
-        const current = arr1[i];
+function sumEvens(arr:number[]) {
+    let sum = 0;
 
-        // arr2 ichida bor-yo‘qligini tekshirish
-        for (let j = 0; j < arr2.length; j++) {
-            if (current === arr2[j]) {
-                result.push(current);
-                break; // takroran qo‘shilmasligi uchun
-            }
+    for (let num of arr) {
+        if (num % 2 === 0) {
+            sum += num;
         }
     }
 
-    return result;
+    return sum;
 }
-const result=findIntersection([1,2,3,0], [3,2,0])
-console.log(result);
+
+console.log(sumEvens([1, 2, 3, 2]) )
+
+
+//Task Y
+// function findIntersection(arr1: number[], arr2: number[]): number[] {
+//     const result: number[] = [];
+
+//     // arr1 elemtlarini tekshirish
+//     for (let i = 0; i < arr1.length; i++) {
+//         const current = arr1[i];
+
+//         // arr2 ichida bor-yo‘qligini tekshirish
+//         for (let j = 0; j < arr2.length; j++) {
+//             if (current === arr2[j]) {
+//                 result.push(current);
+//                 break; // takroran qo‘shilmasligi uchun
+//             }
+//         }
+//     }
+
+//     return result;
+// }
+// const result=findIntersection([1,2,3,0], [3,2,0])
+// console.log(result);
 
 
 
