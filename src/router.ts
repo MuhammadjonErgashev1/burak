@@ -3,6 +3,7 @@ import memberController from './controllers/member.controller';
 import express from 'express';
 import uploader from './libs/utils/uploader';
 import productController from './controllers/product.controller';
+import orderController from './controllers/order.controller';
 const router = express.Router();
 /* memeber */ 
 router.post('/member/login', memberController.login)
@@ -23,5 +24,7 @@ router.get("/product/:id",
     productController.getProduct)
 
 /*Order*/ 
+
+router.post("/order/create", memberController.verifyAuth, orderController.createOrder)
 
 export default router;
