@@ -57,7 +57,7 @@ public async login(input:LoginInput): Promise<Member>{
     
      if(!isMatch) throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD)
      else if(member.memberStatus === MemberStatus.BLOCK) {
-        throw new Errors(HttpCode.FORIDDEN, Message.BLOCKED_USER)
+        throw new Errors(HttpCode.FORBIDDEN, Message.BLOCKED_USER)
     } 
         
         return await this.memberModel.findById(member._id).lean().exec();

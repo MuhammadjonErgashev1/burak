@@ -1,18 +1,35 @@
 //Task Z
 
-function sumEvens(arr:number[]) {
-    let sum = 0;
-
-    for (let num of arr) {
-        if (num % 2 === 0) {
-            sum += num;
-        }
-    }
-
-    return sum;
+function randomBetween(min:number, max:number) {
+  const numbers = [];
+  for (let i = min; i <= max; i++) {
+    numbers.push(i);
+  }
+  // bu indexlarni aniqlab beradi random holda
+  const randomIndex = Math.floor(Math.random() * numbers.length);
+  return numbers[randomIndex];
 }
 
-console.log(sumEvens([1, 2, 3, 2]) )
+
+console.log(randomBetween(30, 50)); 
+
+
+
+// //Task Z
+
+// function sumEvens(arr:number[]) {
+//     let sum = 0;
+
+//     for (let num of arr) {
+//         if (num % 2 === 0) {
+//             sum += num;
+//         }
+//     }
+
+//     return sum;
+// }
+
+// console.log(sumEvens([1, 2, 3, 2]) )
 
 
 //Task Y
