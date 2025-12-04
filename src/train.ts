@@ -1,17 +1,27 @@
-//Task Z
+//Task ZC
 
-function randomBetween(min:number, max:number) {
-  const numbers = [];
-  for (let i = min; i <= max; i++) {
-    numbers.push(i);
-  }
-  // bu indexlarni aniqlab beradi random holda
-  const randomIndex = Math.floor(Math.random() * numbers.length);
-  return numbers[randomIndex];
+function celsiusToFahrenheit(celsius:number) {
+    return celsius * 9/5 + 32;
 }
+console.log(celsiusToFahrenheit(0)) ;  
+console.log(celsiusToFahrenheit(10));  
+console.log(celsiusToFahrenheit(25));  
 
 
-console.log(randomBetween(30, 50)); 
+//Task ZB
+
+// function randomBetween(min:number, max:number) {
+//   const numbers = [];
+//   for (let i = min; i <= max; i++) {
+//     numbers.push(i);
+//   }
+//   // bu indexlarni aniqlab beradi random holda
+//   const randomIndex = Math.floor(Math.random() * numbers.length);
+//   return numbers[randomIndex];
+// }
+
+
+// console.log(randomBetween(30, 50)); 
 
 
 
