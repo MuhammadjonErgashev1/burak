@@ -1,11 +1,25 @@
-//Task ZC
+//Task ZD
 
-function celsiusToFahrenheit(celsius:number) {
-    return celsius * 9/5 + 32;
+function changeNumberInArray(index:number, arr:number[], newNumber:number) {
+  if (index < 0 || index >= arr.length) {
+    return "Index notogri";
+  }
+
+  const newArr = [...arr];
+  newArr[index] = newNumber;
+  return newArr;
 }
-console.log(celsiusToFahrenheit(0)) ;  
-console.log(celsiusToFahrenheit(10));  
-console.log(celsiusToFahrenheit(25));  
+console.log(changeNumberInArray(1, [1, 3, 7, 2], 2))
+
+
+// //Task ZC
+
+// function celsiusToFahrenheit(celsius:number) {
+//     return celsius * 9/5 + 32;
+// }
+// console.log(celsiusToFahrenheit(0)) ;  
+// console.log(celsiusToFahrenheit(10));  
+// console.log(celsiusToFahrenheit(25));  
 
 
 //Task ZB
