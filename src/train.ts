@@ -1,15 +1,31 @@
-//Task ZD
+//Task ZF
 
-function changeNumberInArray(index:number, arr:number[], newNumber:number) {
-  if (index < 0 || index >= arr.length) {
-    return "Index notogri";
-  }
-
-  const newArr = [...arr];
-  newArr[index] = newNumber;
-  return newArr;
+function capitalizeWords(str: string) {
+  return str
+    .split(' ')
+    .map(word => {
+      if (word.length <= 2) {
+        return word; // 1 yoki 2 harfli so'zlar o'zgarishsiz
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(' ');
 }
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 2))
+console.log(capitalizeWords('name should be a string'));
+
+
+// //Task ZD
+
+// function changeNumberInArray(index:number, arr:number[], newNumber:number) {
+//   if (index < 0 || index >= arr.length) {
+//     return "Index notogri";
+//   }
+
+//   const newArr = [...arr];
+//   newArr[index] = newNumber;
+//   return newArr;
+// }
+// console.log(changeNumberInArray(1, [1, 3, 7, 2], 2))
 
 
 // //Task ZC
