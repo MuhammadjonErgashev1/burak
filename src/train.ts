@@ -1,17 +1,33 @@
-//Task ZF
+// task ZG
 
-function capitalizeWords(str: string) {
+function capitalizeWords(str: string): string {
+  if (!str) return '';
+  
   return str
-    .split(' ')
-    .map(word => {
-      if (word.length <= 2) {
-        return word; // 1 yoki 2 harfli so'zlar o'zgarishsiz
-      }
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    })
-    .join(' ');
+    .trim() 
+    .toLowerCase()
+    .replace(/\s+/g, '_'); 
 }
-console.log(capitalizeWords('name should be a string'));
+
+
+console.log(capitalizeWords('name should be a string')); // 'name_should_be_a_string'
+console.log(capitalizeWords('  Hello World  ')); // 'hello_world'
+
+
+// //Task ZF
+
+// function capitalizeWords(str: string) {
+//   return str
+//     .split(' ')
+//     .map(word => {
+//       if (word.length <= 2) {
+//         return word; // 1 yoki 2 harfli so'zlar o'zgarishsiz
+//       }
+//       return word.charAt(0).toUpperCase() + word.slice(1);
+//     })
+//     .join(' ');
+// }
+// console.log(capitalizeWords('name should be a string'));
 
 
 // //Task ZD
