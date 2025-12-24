@@ -1,17 +1,52 @@
-// task ZG
+//task ZJ
 
-function capitalizeWords(str: string): string {
-  if (!str) return '';
-  
-  return str
-    .trim() 
-    .toLowerCase()
-    .replace(/\s+/g, '_'); 
+interface NestedArray extends Array<number | NestedArray> {}
+
+function reduceNestedArray(arr: NestedArray): number {
+  return arr.reduce((sum:number, item) => {
+    if (Array.isArray(item)) {
+      return sum + reduceNestedArray(item);
+    }
+    return sum + item;
+  }, 0);
+}
+
+// Test
+console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
+
+
+
+
+//task ZI
+
+function delayHelloWorld(text: string) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(text);
+    }, 3000);
+  });
 }
 
 
-console.log(capitalizeWords('name should be a string')); // 'name_should_be_a_string'
-console.log(capitalizeWords('  Hello World  ')); // 'hello_world'
+delayHelloWorld("Hello World!").then(result => {
+  console.log(result);
+});
+
+
+// task ZG
+
+// function capitalizeWords(str: string): string {
+//   if (!str) return '';
+  
+//   return str
+//     .trim() 
+//     .toLowerCase()
+//     .replace(/\s+/g, '_'); 
+// }
+
+
+// console.log(capitalizeWords('name should be a string')); // 'name_should_be_a_string'
+// console.log(capitalizeWords('  Hello World  ')); // 'hello_world'
 
 
 // //Task ZF
