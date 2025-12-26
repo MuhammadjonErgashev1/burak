@@ -1,36 +1,55 @@
-//task ZJ
+//task ZK
 
-interface NestedArray extends Array<number | NestedArray> {}
+function printNumbers() {
+  let count = 1;
 
-function reduceNestedArray(arr: NestedArray): number {
-  return arr.reduce((sum:number, item) => {
-    if (Array.isArray(item)) {
-      return sum + reduceNestedArray(item);
+  const intervalId = setInterval(() => {
+    console.log(count);
+
+    if (count === 5) {
+      clearInterval(intervalId); // to‘xtatadi
     }
-    return sum + item;
-  }, 0);
+
+    count++;
+  }, 1000);
 }
 
-// Test
-console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
+printNumbers();
+
+
+// //task ZJ
+
+// interface NestedArray extends Array<number | NestedArray> {}
+
+// function reduceNestedArray(arr: NestedArray): number {
+//   return arr.reduce((sum:number, item) => {
+//     if (Array.isArray(item)) {
+//       return sum + reduceNestedArray(item);
+//     }
+//     return sum + item;
+//   }, 0);
+// }
+
+// // Test
+// console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
 
 
 
 
-//task ZI
+// //task ZI
 
-function delayHelloWorld(text: string) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(text);
-    }, 3000);
-  });
-}
+// function delayHelloWorld(text: string) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(text);
+//     }, 3000);
+//   });
+// }
 
 
-delayHelloWorld("Hello World!").then(result => {
-  console.log(result);
-});
+// delayHelloWorld("Hello World!").then(result => {
+//   console.log(result);
+// });
 
 
 // task ZG
