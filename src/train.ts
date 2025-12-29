@@ -1,20 +1,31 @@
-//task ZK
+//task ZL
 
-function printNumbers() {
-  let count = 1;
-
-  const intervalId = setInterval(() => {
-    console.log(count);
-
-    if (count === 5) {
-      clearInterval(intervalId); // to‘xtatadi
-    }
-
-    count++;
-  }, 1000);
+function stringToKebab(str: string) {
+  return str
+    .toLowerCase()          
+    .trim()               
+    .replace(/\s+/g, '-');
 }
 
-printNumbers();
+console.log(stringToKebab("I love Kebab"));
+
+// //task ZK
+
+// function printNumbers() {
+//   let count = 1;
+
+//   const intervalId = setInterval(() => {
+//     console.log(count);
+
+//     if (count === 5) {
+//       clearInterval(intervalId); // to‘xtatadi
+//     }
+
+//     count++;
+//   }, 1000);
+// }
+
+// printNumbers();
 
 
 // //task ZJ
