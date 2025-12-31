@@ -1,13 +1,20 @@
-//task ZL
-
-function stringToKebab(str: string) {
-  return str
-    .toLowerCase()          
-    .trim()               
-    .replace(/\s+/g, '-');
+//task Zm
+function reverseInteger(num:number) {
+  return Number(String(num).split('').reverse().join(''));
 }
+console.log(reverseInteger(123456789)); // 987654321
 
-console.log(stringToKebab("I love Kebab"));
+
+// //task ZL
+
+// function stringToKebab(str: string) {
+//   return str
+//     .toLowerCase()          
+//     .trim()               
+//     .replace(/\s+/g, '-');
+// }
+
+// console.log(stringToKebab("I love Kebab"));
 
 // //task ZK
 
