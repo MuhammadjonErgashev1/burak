@@ -1,8 +1,30 @@
-//task Zm
-function reverseInteger(num:number) {
-  return Number(String(num).split('').reverse().join(''));
+// /Task ZO
+
+function areParenthesesBalanced(str:string) {
+  let balance = 0;
+
+  for (const char of str) {
+    if (char === '(') balance++;
+    if (char === ')') balance--;
+
+    
+    if (balance < 0) return false;
+  }
+
+  return balance === 0;
 }
-console.log(reverseInteger(123456789)); // 987654321
+
+
+console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
+console.log(areParenthesesBalanced("(abc))")); 
+
+
+
+//task ZM
+// function reverseInteger(num:number) {
+//   return Number(String(num).split('').reverse().join(''));
+// }
+// console.log(reverseInteger(123456789)); // 987654321
 
 
 // //task ZL
