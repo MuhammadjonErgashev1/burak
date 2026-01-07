@@ -1,22 +1,47 @@
-// /Task ZO
+// task ZP
 
-function areParenthesesBalanced(str:string) {
-  let balance = 0;
+function countNumberAndLetters(str:string) {
+  let number = 0;
+  let letter = 0;
 
   for (const char of str) {
-    if (char === '(') balance++;
-    if (char === ')') balance--;
-
-    
-    if (balance < 0) return false;
+    if (char >= '0' && char <= '9') {
+      number++;
+    } else if (
+      (char >= 'a' && char <= 'z') ||
+      (char >= 'A' && char <= 'Z')
+    ) {
+      letter++;
+    }
   }
 
-  return balance === 0;
+  return { number, letter };
 }
 
 
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
-console.log(areParenthesesBalanced("(abc))")); 
+console.log(countNumberAndLetters("string152%\\¥"));
+// { number: 3, letter: 6 }
+
+
+// /Task ZO
+
+// function areParenthesesBalanced(str:string) {
+//   let balance = 0;
+
+//   for (const char of str) {
+//     if (char === '(') balance++;
+//     if (char === ')') balance--;
+
+    
+//     if (balance < 0) return false;
+//   }
+
+//   return balance === 0;
+// }
+
+
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
+// console.log(areParenthesesBalanced("(abc))")); 
 
 
 
