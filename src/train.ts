@@ -1,25 +1,46 @@
-// task ZP
+//task ZQ
+function findDuplicates(arr: number[]): number[] {
+  const count: Record<number, number> = {};
+  const result: number[] = [];
 
-function countNumberAndLetters(str:string) {
-  let number = 0;
-  let letter = 0;
+  for (const num of arr) {
+    count[num] = (count[num] || 0) + 1;
+  }
 
-  for (const char of str) {
-    if (char >= '0' && char <= '9') {
-      number++;
-    } else if (
-      (char >= 'a' && char <= 'z') ||
-      (char >= 'A' && char <= 'Z')
-    ) {
-      letter++;
+  for (const num in count) {
+    if (count[num] >= 2) {
+      result.push(Number(num));
     }
   }
 
-  return { number, letter };
+  return result;
 }
 
+// Misol
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 5, 4])); // [3, 4]
 
-console.log(countNumberAndLetters("string152%\\¥"));
+// task ZP
+
+// function countNumberAndLetters(str:string) {
+//   let number = 0;
+//   let letter = 0;
+
+//   for (const char of str) {
+//     if (char >= '0' && char <= '9') {
+//       number++;
+//     } else if (
+//       (char >= 'a' && char <= 'z') ||
+//       (char >= 'A' && char <= 'Z')
+//     ) {
+//       letter++;
+//     }
+//   }
+
+//   return { number, letter };
+// }
+
+
+// console.log(countNumberAndLetters("string152%\\¥"));
 // { number: 3, letter: 6 }
 
 
