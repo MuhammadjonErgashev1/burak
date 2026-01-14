@@ -1,23 +1,34 @@
-//task ZQ
-function findDuplicates(arr: number[]): number[] {
-  const count: Record<number, number> = {};
-  const result: number[] = [];
+//task ZR
 
-  for (const num of arr) {
-    count[num] = (count[num] || 0) + 1;
-  }
-
-  for (const num in count) {
-    if (count[num] >= 2) {
-      result.push(Number(num));
-    }
-  }
-
-  return result;
+function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+  return arr1.every(item => arr2.includes(item));
 }
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));      // true
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));   // true
+console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));      // false
 
-// Misol
-console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 5, 4])); // [3, 4]
+
+
+// //task ZQ
+// function findDuplicates(arr: number[]): number[] {
+//   const count: Record<number, number> = {};
+//   const result: number[] = [];
+
+//   for (const num of arr) {
+//     count[num] = (count[num] || 0) + 1;
+//   }
+
+//   for (const num in count) {
+//     if (count[num] >= 2) {
+//       result.push(Number(num));
+//     }
+//   }
+
+//   return result;
+// }
+
+// // Misol
+// console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 5, 4])); // [3, 4]
 
 // task ZP
 
