@@ -1,11 +1,32 @@
-//task ZR
+//task ZS
 
-function areArraysEqual(arr1: number[], arr2: number[]): boolean {
-  return arr1.every(item => arr2.includes(item));
+function singleNumber(nums: number[]): number {
+  const map: Record<number, number> = {};
+
+  for (const num of nums) {
+    map[num] = (map[num] || 0) + 1;
+  }
+
+  for (const key in map) {
+    if (map[key] === 1) {
+      return Number(key);
+    }
+  }
+
+  throw new Error("Array ichida bitta element topilmadi");
 }
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));      // true
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));   // true
-console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));      // false
+
+console.log(singleNumber([4, 2, 1, 2, 1,])); // 4
+
+
+// //task ZR
+
+// function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+//   return arr1.every(item => arr2.includes(item));
+// }
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));      // true
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));   // true
+// console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));      // false
 
 
 
