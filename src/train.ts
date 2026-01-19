@@ -1,22 +1,46 @@
-//task ZS
+// task ZT
 
-function singleNumber(nums: number[]): number {
-  const map: Record<number, number> = {};
+function firstUniqueCharIndex(str: string): number {
+    const count: Record<string, number> = {};
 
-  for (const num of nums) {
-    map[num] = (map[num] || 0) + 1;
-  }
-
-  for (const key in map) {
-    if (map[key] === 1) {
-      return Number(key);
+    // Harflar sonini hisoblash
+    for (const ch of str) {
+        count[ch] = (count[ch] ?? 0) + 1;
     }
-  }
 
-  throw new Error("Array ichida bitta element topilmadi");
+    // Birinchi takrorlanmagan harfni topish
+    for (let i = 0; i < str.length; i++) {
+        if (count[str[i]] === 1) {
+            return i;
+        }
+    }
+
+    return -1;
 }
 
-console.log(singleNumber([4, 2, 1, 2, 1,])); // 4
+// Misol
+console.log(firstUniqueCharIndex("stamp")); // 0
+
+
+// //task ZS
+
+// function singleNumber(nums: number[]): number {
+//   const map: Record<number, number> = {};
+
+//   for (const num of nums) {
+//     map[num] = (map[num] || 0) + 1;
+//   }
+
+//   for (const key in map) {
+//     if (map[key] === 1) {
+//       return Number(key);
+//     }
+//   }
+
+//   throw new Error("Array ichida bitta element topilmadi");
+// }
+
+// console.log(singleNumber([4, 2, 1, 2, 1])); // 4
 
 
 // //task ZR
