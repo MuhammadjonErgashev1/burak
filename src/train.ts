@@ -1,25 +1,46 @@
-// task ZT
+ // task ZU
 
-function firstUniqueCharIndex(str: string): number {
-    const count: Record<string, number> = {};
+ function sumOfUnique(nums: number[]): number {
+    const counts: Record<number, number> = {};
+    let totalSum: number = 0;
 
-    // Harflar sonini hisoblash
-    for (const ch of str) {
-        count[ch] = (count[ch] ?? 0) + 1;
+    // Takrorlanishlar sonini yig'ish
+    for (const num of nums) {
+        counts[num] = (counts[num] || 0) + 1;
     }
 
-    // Birinchi takrorlanmagan harfni topish
-    for (let i = 0; i < str.length; i++) {
-        if (count[str[i]] === 1) {
-            return i;
+    // Unique (takrorlanmagan) sonlarni hisoblash
+    for (const key in counts) {
+        if (counts[key] === 1) {
+            totalSum += parseInt(key);
         }
     }
 
-    return -1;
+    return totalSum;
 }
+console.log(sumOfUnique([1, 2, 3, 2]));
+// // task ZT
 
-// Misol
-console.log(firstUniqueCharIndex("stamp")); // 0
+// function firstUniqueCharIndex(str: string): number {
+//     const count: Record<string, number> = {};
+
+//     // Harflar sonini hisoblash
+//     for (const ch of str) {
+//         count[ch] = (count[ch] ?? 0) + 1;
+//     }
+
+//     // Birinchi takrorlanmagan harfni topish
+//     for (let i = 0; i < str.length; i++) {
+//         if (count[str[i]] === 1) {
+//             return i;
+//         }
+//     }
+
+//     return -1;
+// }
+
+// // Misol
+// console.log(firstUniqueCharIndex("stamp")); // 0
 
 
 // //task ZS
